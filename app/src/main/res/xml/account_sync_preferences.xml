@@ -1,0 +1,25 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreferenceCompat
+        app:key="sync"
+        app:title="@string/sync_title" />
+
+    <SwitchPreferenceCompat
+        app:dependency="sync"
+        app:key="attachment"
+        app:summaryOff="@string/attachment_summary_off"
+        app:summaryOn="@string/attachment_summary_on"
+        app:title="@string/attachment_title" />
+
+    <ListPreference
+        app:defaultValue="US"
+        app:entries="@array/pref_market_title"
+        app:entryValues="@array/pref_market_values"
+        app:key="market"
+        app:negativeButtonText="@null"
+        app:positiveButtonText="@null"
+        android:title="@string/account_title"
+        android:summary="Market Locale"/>
+
+</PreferenceScreen>

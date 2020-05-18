@@ -1,6 +1,7 @@
 package com.amwallace.droidcafe;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.amwallace.droidcafe.Model.DessertOrder;
@@ -9,6 +10,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.preference.PreferenceManager;
 
 import android.view.View;
 import android.view.Menu;
@@ -55,6 +57,20 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        //set default values for settings
+        PreferenceManager.setDefaultValues(this,
+                R.xml.messages_preferences,false);
+        PreferenceManager.setDefaultValues(this,
+                R.xml.account_sync_preferences,false);
+
+        //read values for settings from shared prefs
+        SharedPreferences sharedPreferences = PreferenceManager
+                .getDefaultSharedPreferences(this);
+        //get market preference string
+        String marketPref = sharedPreferences.getString("market", "-1");
+        //display market preference in toast
+        displayToast(marketPref);
     }
 
     //The Ice cream sandwich image was clicked, order an ice cream sandwich
@@ -124,10 +140,16 @@ public class MainActivity extends AppCompatActivity {
                 orderIntent.putExtra("dessertOrder", dessertOrder);
                 startActivity(orderIntent);
                 finish();
-                break;
+                return true;
             case R.id.action_status:
                 displayToast("Selected Menu item Status");
                 break;
+            case R.id.action_settings:
+                //create settings intent
+                Intent settingsIntent = new Intent(this, SettingsActivity.class);
+                //start settings activity
+                startActivity(settingsIntent);
+                return true;
             default:
                 //do nothing
                 break;

@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Droid Cafe</string>
     <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
 
     <string name="donut_order_message">You ordered a donut.</string>
     <string name="ice_cream_order_message">You ordered an ice cream sandwich.</string>
@@ -30,4 +29,42 @@
     <string name="action_order">Order</string>
     <string name="action_status">Status</string>
     <string name="action_favorites">Favorites</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="account_sync_header">Account &amp; Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string-array name="pref_market_title">
+        <item>United States</item>
+        <item>Canada</item>
+        <item>United Kingdom</item>
+        <item>India</item>
+        <item>Japan</item>
+        <item>Russia</item>
+        <item>China</item>
+    </string-array>
+    <string-array name="pref_market_values">
+        <item>US</item>
+        <item>CA</item>
+        <item>UK</item>
+        <item>IND</item>
+        <item>JAP</item>
+        <item>RU</item>
+        <item>CHN</item>
+    </string-array>
+    <string name="account_title">Market</string>
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+
+    <string name="settings">Settings</string>
 </resources>
